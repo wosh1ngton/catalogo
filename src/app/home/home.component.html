@@ -1,0 +1,21 @@
+<p>Catálogo de Materiais</p>
+
+<select [(ngModel)]="codigoSelecionado" (change)="getClassesPorGrupo()">
+    <option> -- Grupo --</option>
+    <option *ngFor="let item of grupos" [value]="item.codigo">{{item.descricao}}</option>    
+</select>
+<br />
+<select [(ngModel)]="classeSelecionada" (change)="getPDMporClasse(); getMaterialPorClasse()">
+    <option> -- Classe -- </option>
+    <option *ngFor="let classe of classeFiltrada" [value]="classe.codigo"> {{classe.descricao}} </option>
+</select>
+<br />
+<select [(ngModel)]="pdmSelecionado">
+    <option> -- PDM -- </option>
+    <option *ngFor="let pdm of pdmFiltrados" [value]="pdm.codigo"> {{pdm.descricao}} </option>
+</select>
+<br />
+<select [(ngModel)]="materialSelecionado">
+    <option> -- Materiais -- </option>
+    <option *ngFor="let material of materiaisFiltrados" [value]="material.codigo"> {{material.descricao}} </option>
+</select>
